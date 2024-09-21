@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "pydantic-vs-marshmallow-dataclasses"
+version = "0.1.0"
+description = ""
+authors = ["Aleksey Semenov <alexsemenov1610@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^2.9.2"
+marshmallow = "^3.22.0"
+marshmallow-dataclass = "^8.7.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+lint.select = [
+    "ALL", # include all the rules, including new ones
+]
+lint.ignore = [
+    "S101", # Use of `assert` detected
+    "T201", # `print` found
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D104", # Missing docstring in public package
+    "D211",
+    "D213",
+    "C408",
+]
